@@ -1,0 +1,290 @@
+/*--------------------------------------------------------------
+Titel img and sunburst background
+--------------------------------------------------------------*/
+
+.title-img-area{
+    background: none;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    
+    // margin-top:10rem;//vertical change
+    /****diaplay:block for mobile(display:grid for pc)*****/
+    @include break(0px, $breakpoint-pc) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+
+    /****size for whole title img area*****/
+    // border:2px solid black;//test
+    @include break (0px,400px) {
+        max-height: 27rem;
+    }
+    @include break (400px,576px) {
+        max-height: 40rem;
+    }
+    @include break (576px,690px) {
+        max-height: 42rem;
+        
+    }
+    @include break (690px,$breakpoint-pc) {
+        max-height: 45rem;
+        
+    }
+    @include break ($breakpoint-pc,1700px) {
+        max-height: 41rem;
+    }
+    @include break (1700px) {
+        max-height: 45rem;
+    }
+    
+    
+
+    #title-img{/****my picture*****/
+        // background: url("./images/sunburst-bg.svg");
+        // border: 2px solid black;
+        cursor: pointer;
+        margin-top:-20%;
+        margin-left:-22%;
+        position: relative;
+        z-index:1;
+        
+        /****size for my picture*****/
+        width:160%;
+        
+        // @include break ($breakpoint-pc) {
+        //     max-height: 40rem;
+        // }
+        
+        @include break (0,576px) {
+            max-width:150%;
+            margin-left:-17%;
+            margin-top:-23%;
+        }
+        @include break (576px,690px) {
+            max-width:125%;
+            margin-left:-5%;
+        }
+        @include break (690px,$breakpoint-pc) {
+            max-width:120%;
+            margin-top:-20%;
+            margin-left:-3%;
+        }
+        @include break ($breakpoint-pc,900px) {
+            margin-top:1rem;
+            // transition: .2s  ease-in-out;
+        }
+        @include break (900px,1100px) {
+            margin-top:-2rem;
+            margin-left:-21%;
+            // transition: all .2s ease-in-out;
+        }
+        @include break (1100px,1300px) {
+            max-width:140%;
+            margin-top:-3rem;
+            margin-left:-11%;
+            // transition: all .2s ease-in-out;
+        }
+        @include break (1300px,1700px) {
+            margin-top:-2rem;
+            // transition: all .2s ease-in-out;
+        }
+    
+        @include break (1700px) {
+            margin-top:-4rem;
+            margin-left:-22%;
+            // transition: all .2s ease-in-out;
+        }
+        
+    }
+    .sunburst{
+        // @include break (0, $breakpoint-pc) {//mobile sunburst fade in 2s//kindle is 800px
+        //     animation:opacityNone 1.5s forwards ease-out 1  
+        // }
+        position: relative;
+        z-index:0;
+        #title-bg {//rotate sunburst
+            display: block;
+            text-align: center;//center 25% (depends on width)
+            margin-left:-15%;//move left 25% (depends on width)
+            margin-top:-90%;
+            width:130%;
+            /******sunburst-place-and-size*******/
+            @include break (576px,690px) {
+                margin-top:-80%;
+                margin-left:-15%;
+                width:130%;
+            } 
+            @include break (690px,$breakpoint-pc) {
+                margin-top:-75%;
+                margin-left:-5%;
+                width:110%;
+            } 
+            @include break ($breakpoint-pc, 1000px) {
+                margin-top:-165%;
+                margin-left:-75%;
+                width:250%;
+            } 
+            @include break (1000px,1200px) {
+                margin-top:-145%;
+                margin-left:-50%;
+                width:200%;
+            } 
+            @include break (1200px) {
+                margin-top:-135%;
+                margin-left:-50%;
+                width:200%;
+            } 
+            
+            
+            animation: rotate 4s linear 0.5s infinite;  
+            @include break ($breakpoint-pc) {//pc doesnt have sunburst when loading
+                opacity:0;
+            }       
+        } 
+    }  
+}
+    
+
+
+
+// @keyframes opacityNone {
+//     0% { opacity: 0}
+//     10% { opacity:0}
+//     60% { opacity:1}
+//     80% { opacity: 1}
+//     100% { opacity: 0}
+// } 
+
+@keyframes rotate {
+    from { rotate:0deg}
+	to { rotate:360deg}
+}
+
+
+/*--------------------------------------------------------------
+Titel btns
+--------------------------------------------------------------*/    
+
+.title-btn-area {
+    // border:solid 3px blue;//test
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+    // border:2px solid blue;//test
+    /******size and width for title-btn********/
+    @include break (0px,400px) {
+        margin-top:-6.5rem;
+        width:80%;
+    }
+    @include break (400px,576px) {
+        margin-top:-8rem;
+        width:80%;
+    }
+    @include break (576px,690px) {
+        margin-top:-13rem;
+        width:65%;
+    }
+    @include break (690px,$breakpoint-pc) {
+        margin-top:-13.5rem;
+        width:62%;
+        
+    }
+    @include break ($breakpoint-pc) {
+        margin-top:0rem;
+        padding-top:-1rem;
+        width:100%;//change with grid layout
+    }
+    
+    
+    .title-btn {
+        opacity:0;
+        animation: show 0.5s ease-in 0.4s forwards; 
+
+        color:$color-main;
+        //center inner:
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        //inner width:
+        width:100%;
+        
+        //style: 
+        cursor: pointer;
+        background:$color-backgrounds;
+        //temperary
+        border:solid 2px $color-main ;
+        // border-radius: 10px;
+        // box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        transition: all .25s ease-in-out;
+        &:hover {
+            background:$color-main;
+            color:$color-backgrounds;
+        }
+        @include break (0,$breakpoint-pc) {
+            padding:0.8rem;
+            margin-top:0.5rem;
+            font-size:1rem;
+        }
+        @include break ($breakpoint-pc,1300px) {
+            animation: show 1s ease-in 1.2s forwards; 
+            font-size:1.3rem;
+            border:none;
+            border-radius: none;
+            box-shadow: none;
+            padding:1.1rem 0.1rem 1.1rem 0.1rem;
+            background:$color-main;
+            color:$color-backgrounds;
+            // margin-top:1.1rem;
+            &:hover {
+                transform:scale(1.02)
+            }
+            
+        }
+        @include break (1300px) {
+
+            opacity:0;
+            animation: show 1s ease-in 1s forwards; 
+            font-size:1.5rem;
+            border:none;
+            // border-radius:1rem;
+            // box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+            padding:1.5rem 0.1rem 1.5rem 0.1rem;
+            // background:$color-main;
+            color:$color-backgrounds;
+            margin-right:10rem;
+            margin-top:1.1rem;
+            background:$color-main;
+            // font-size:2.5rem;
+            box-shadow: none;
+            &:hover {
+                // color:$color-main;
+                // background:$color-backgrounds;
+                transform:scale(1.02)
+            }
+
+            
+        }
+        
+        
+    }
+    @include break ($breakpoint-pc,1300px) {
+        #upper-btn {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+    
+}
+
+
+
+
+// --breakpoint-xs: 0;
+// --breakpoint-sm: 576px;
+// --breakpoint-md: 768px;
+// --breakpoint-lg: 992px;
+// --breakpoint-xl: 1200px;
+

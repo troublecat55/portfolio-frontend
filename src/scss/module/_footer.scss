@@ -1,0 +1,32 @@
+.colophon{
+    // border:2px solid black;//test
+    position:relative;
+    z-index:101;
+    
+    
+    .icons {
+        text-align: center;
+        padding:0;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        background:none;
+        // opacity:0;
+        // animation: show 1s ease-in 1s forwards; 
+        
+        .icon-item {
+            cursor: pointer;
+            margin-left:0.5rem;
+            margin-right:0.5rem;
+        }
+        
+    }
+
+    #copyRight{
+        text-align: center;
+        padding:0;
+        margin-top: 0;
+        font-size: 0.8rem;
+    }
+    
+}
+

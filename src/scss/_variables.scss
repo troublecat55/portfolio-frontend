@@ -1,0 +1,66 @@
+/*--------------------------------------------------------------
+Font Family
+--------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Adamina&family=Amiri:wght@400;700&family=Merriweather:wght@700;900&family=Prata&family=Sorts+Mill+Goudy&family=Spectral:wght@200;400;500&family=Vidaloka&display=swap" );
+
+
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+
+// --breakpoint-xs: 0;
+// --breakpoint-sm: 576px;
+// --breakpoint-md: 768px;
+// --breakpoint-lg: 992px;
+// --breakpoint-xl: 1200px;
+
+// font-family: 'Adamina', serif;
+// font-family: 'Amiri', serif;
+// font-family: 'Merriweather', serif;
+// font-family: 'Prata', serif;
+// font-family: 'Sorts Mill Goudy', serif;
+// font-family: 'Spectral', serif;
+// font-family:'Vidaloka', serif;
+
+$breakpoint-pc:801px;//kindle width 800 px
+
+$maintitle-font: 'Vidaloka', serif;
+$subtitle-font: 'Sorts Mill Goudy', serif;
+$title-font: 'Prata', serif;
+$content-font:'Spectral', serif;
+
+
+
+$offwhite:    #EEE8D6;
+$darkblue:    #022933;
+$yellow:      #ddca7e;
+$lightblue:   #51a7fa;
+$blue:        #0265c0;
+$green:       #548C27;
+$orange:      #f49018;
+$red:         #D14348;
+$purple:      #6D73C2;
+$green-blue:  #00A4CCFF;
+$coral:       #FC766AFF;
+$island-green: #2BAE66FF;
+
+// traditional chinese colors http://ylbook.com/cms/web/chuantongsecai/chuantongsecai.htm
+$honeydew:    #F0FFF0;
+$ivory: #FFFFF0;
+$snowwhite:#F0FCFF;
+$shung:#622A1D;
+$shunggreen:#3D3B4F;
+$coal:#312520;
+$wublack:#392F41;
+$goose:#FFF143;
+$chigold: #F2BE45;
+$lightyellow:#fff9c0;
+
+
+$color-main: black;
+$color-backgrounds: $snowwhite;
+$color-headlines: black;
+$elegant-hover:rgba(98, 42, 29, 0.3);
+
+$orange-transparent:rgba(244,144,24,0.3);
+

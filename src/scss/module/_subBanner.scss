@@ -1,0 +1,57 @@
+/*--------------------------------------------------------------
+Sub-banner section(psudo element)
+--------------------------------------------------------------*/
+
+.sub-banner {
+    //born in 1992
+    color:$color-headlines;
+    display: inline-block;//block?no
+    // top: 150px;//vertical change
+    position: relative;
+    font-size:0.85rem;
+    @include break (0, $breakpoint-pc) {
+        top:-1rem;
+    }
+    @include break ($breakpoint-pc) {
+        top:0rem;
+    }
+    
+    &::before,
+    &::after{
+        content: " ";
+        position: absolute;
+        border-color: $color-headlines transparent $color-headlines transparent ;
+        border-width: 1px;
+        border-style: solid;
+        height: 10%;
+        width: 100vw;
+        @include transform(translateX(-200%));
+        // z-index: -100;
+        animation: moveFromLeft 1s cubic-bezier(.17,.67,1,.54)  forwards;
+        animation-delay:1.5s;
+        opacity:1;
+        
+    }
+    &::after {
+        top: 0.5rem;//upper line //value up move down//value down move up
+        
+    }
+    &::before {
+        top: 2rem;//bottom line //value up move down//value down move up
+    }
+    
+    
+}
+
+@include animation-moveX(moveFromLeft, -200%, -50%);
+// .load-animation {
+//     animation: fadeIn 0.5s ease-out 2s forwards;
+// }
+// @keyframes fadeIn {
+//     0% { opacity:0}
+// 	100% { opacity:1}
+// }
+// @keyframes moveFromLeft {
+//     from {left: 0}
+//     to {left:100%}
+// }

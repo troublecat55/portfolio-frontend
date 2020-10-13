@@ -1,0 +1,172 @@
+
+
+@supports (grid-area: auto) {
+    @include break($breakpoint-pc,1300px) {
+        .site{
+            max-width: none;
+            display:grid;
+            grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+            grid-template-rows:0.1fr 2fr 5.5fr 1fr;
+        }
+        .headline {
+            grid-column:1/5;
+            grid-row: 1/2;
+        }
+        .main-area {
+            grid-column:1/5;
+            grid-row: 2/4;
+        } 
+        .colophon {
+            grid-column:2/4;
+            grid-row: 4/5;
+            z-index: 100;
+        }
+        
+        /********main-area-subgrid($breakpoint-pc,1300px)********/
+        .main-area{
+            display:grid;
+            justify-content: center;
+            grid-template-columns: 1fr 0.05fr 1fr 0.1fr;
+            grid-template-rows: 0.5fr 1fr 0.5fr 1fr ;
+            background:none;
+            grid-gap:none;
+        }
+        .home-img {
+            grid-column:1/2;
+            grid-row:1/5;
+        }
+        .home-button {
+            grid-column:3/4;
+            grid-row:2/3;
+        }
+        .sidetext-living
+        {
+            display:none;
+        }
+        .sidetext-currentLearning {
+            display:none;
+            // grid-column:3/4;
+            // grid-row:4/5;
+        }
+        .sidetext-ability{
+            grid-column:3/4;
+            grid-row:3/4;
+        }
+        .sidetext-advertising-marketer {
+            display:none;
+            // grid-column:3/4;
+            // grid-row:5/6;
+        }
+        /********currentLearning-subsubgrid********/
+        .currentLearning-content {
+            display:grid;
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        #upper-currentLearning{
+            grid-column:1/2;
+        }
+        #bottom-currentLearning{
+            grid-column:2/3;
+        }
+        // /********title-btn-subsubgrid********/
+        // .title-btn-area {
+        //     display:grid;
+        //     grid-template-columns: 1fr 1fr;
+        // }
+
+        // #upper-btn{
+        //     grid-column:1/2;
+        // }
+        // #bottom-btn{
+        //     grid-column:2/3;
+        // }
+
+    // /********advertising-marketer-subsubgrid********/
+    //     .advertising-marketer {
+    //         display:grid;
+    //         grid-template-columns: 1fr 1fr;
+    //     }
+    //     #upper-ad-marker{
+    //         grid-column:1/2;
+    //     }
+    //     #bottom-ad-marker{
+    //         grid-column:2/3;
+    //     }
+
+
+
+    }
+    @include break(1300px) {
+        .site{
+            max-width: none;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows:0.5fr 2fr 1fr;
+        }
+        .headline {
+            grid-column:1/4;
+            grid-row: 1/2;
+        }
+        .main-area {
+            grid-column:1/4;
+            grid-row: 2/4;
+        } 
+        .colophon {
+            grid-column:2/3;
+            grid-row: 3/4;
+            
+        }
+        
+        
+
+        /********main-area-subgrid(1300px)********/
+        .main-area{
+            display:grid;
+            justify-content: center;
+            grid-template-columns: 1fr 0.1fr 0.4fr 0.6fr 0.4fr 0.4fr 0.1fr;
+            grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr ;
+        }
+        .home-img {
+            grid-column:1/2;
+            grid-row:1/6;
+        }
+        .home-button {
+            grid-column:5/7;
+            grid-row:2/3;
+        }
+        .sidetext-living
+        {
+            display:none;
+            // grid-column:3/4;
+            // grid-row: 3/4;
+        }
+        .sidetext-currentLearning {
+            grid-column:3/4;
+            grid-row:2/3;
+        }
+        .sidetext-ability{
+            display:none;
+            // grid-column:2/4;
+            // grid-row:4/5;
+        }
+        
+        .sidetext-advertising-marketer {
+            grid-column:4/5;
+            grid-row:2/4;
+        }
+        /********footer-subsubgrid********/
+        .colophon {
+            display:grid;
+            justify-content: center;
+            grid-template-rows:9fr 1fr 1fr;
+        }
+        .colophon .icons {
+            grid-row:2/3;
+        }
+        .colophon .copyRight {
+            grid-row:3/4;
+        }
+        
+    }
+}

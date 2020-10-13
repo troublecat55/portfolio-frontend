@@ -1,0 +1,81 @@
+@import "normalize";
+@import "variables";
+@import "mixin";
+
+@import "./module/loading";
+@import "./module/header";
+@import "./module/home";
+@import "./module/subBanner";
+@import "./module/nav";
+@import "./module/lang";
+@import "./module/footer";
+@import "./module/grid_layout";
+@import "./module/sidetext";
+
+
+//not really in a using bootstrap mood : ((
+// @import '../../node_modules/bootstrap/scss/bootstrap';
+
+
+*, *::before, *::after { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box 
+}
+html{
+	overflow-x: hidden;
+	// overflow-y: hidden;
+}
+
+body,html {
+	font-family: $content-font;
+	font-size: 0.95rem;
+	margin: 0; 
+	padding: 0;
+	width: 100%;
+	height:100vh;
+	background-color:$color-backgrounds;
+	// @include break (0,674px) {//674 is body width aka psudo line
+	// 	overflow-x: hidden;
+	// 	overflow-y: hidden;
+	// }
+}
+
+
+.headline {
+	text-align: center; 
+	// animation: fadeIn 0.5s ease-out forwards;
+	
+}
+// .main-area,
+// .footer {
+// 		overflow-x: hidden;
+// 		overflow-y: hidden;
+	
+// }
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+Basic responsive layout for all browsers:
+--------------------------------------------------------------*/
+
+.site {
+	margin: 0 auto;
+}
+@include break(0px, $breakpoint-pc) {
+	max-width: 50rem;
+}
+
+
+
+
+
+ 
+ 

@@ -1,0 +1,140 @@
+/*--------------------------------------------------------------
+Hamburger lines
+inspired by:https://www.youtube.com/watch?v=dIyVTjJAkLw&t=152s
+--------------------------------------------------------------*/
+
+    .menu-btn {
+        cursor: pointer;
+        border: 2px solid black; //test
+        width:3.5rem;// @include break()
+        height:3.5rem;// @include break()
+        display:block;
+        margin-bottom:0.8rem;// @include break()
+        margin-right:0.7rem;// @include break()
+
+        opacity:0;
+        animation: show 1s ease-in 1.5s forwards; //nav.scss
+
+        @include break (576px) {//iphone6/7/8 === 414px
+            width:4rem;
+            height:4.2rem;
+            margin-bottom:0.8rem;
+            margin-right: 1rem;
+        }
+    
+        transition: all 0.3 ease-in;
+        position:relative;
+        z-index:10;
+        .menu-btn-hamburger
+        {//inner 3 lines together    
+            width: 1.6rem;
+            height:1.9px;
+            background:$color-headlines;
+            transition: all .5s ease-in-out; 
+            margin-top:1.5rem;  
+            margin-left:0.05rem;
+            // border-radius: 15px;
+            @include break (576px) {//iphone6/7/8 === 414px
+                margin-top:1.75rem;
+            }
+        }
+        .menu-btn-hamburger::before,
+        .menu-btn-hamburger::after
+        {
+            position:absolute;//important for moving 
+            content: '';
+            width: 1.6rem;
+            height:1.9px;
+            background:$color-headlines;
+            transition: all .5s ease-in-out;
+            // border-radius: 15px;
+            
+            
+        }
+        .menu-btn-hamburger::before {@include transform(translate(-0.75rem, -0.6rem))};
+        .menu-btn-hamburger::after {@include transform(translate(-0.75rem, 0.6rem))};
+
+        /***'X'animation***/
+        &.expanded .menu-btn-hamburger {
+            background:transparent;
+            @include transform(translateX(-50px))
+        }
+        &.expanded .menu-btn-hamburger:before { 
+            @include transform(
+                        rotate(-45deg) 
+                        translate(28px, 28px)); 
+            background:$color-backgrounds;
+        }
+        &.expanded .menu-btn-hamburger::after { 
+            @include transform(
+                        rotate(45deg) 
+                        translate(28px, -28px)); 
+                background:$color-backgrounds;}//lower one 
+        
+    }
+    
+
+
+
+/*--------------------------------------------------------------
+Hamburger content
+inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-AE2sM6bPEVGSa2aw&index=46&t=1636s
+--------------------------------------------------------------*/
+.nav {
+    display:flex;
+    // transform: translate(-50%);//whole screen   
+
+    .nav-links {
+        flex-direction:column;
+        position:fixed;
+        top:0;
+        margin-top:0;
+        left:0;
+        justify-content: space-between;
+        align-items: center;
+        width:100vw;
+        height: 100vh;
+        padding: 10rem 2rem;
+        font-size:2rem;
+        background: $color-headlines;
+        color:$color-backgrounds;
+        z-index:8;
+
+        transition: 
+            opacity .8s .5s,//take time and delay
+            clip-path 1s .5s;
+
+         // clip-path: ellipse(200px 300px);
+
+        clip-path: ellipse(200px 300px at top left);
+
+        .nav-item {
+            cursor: pointer;
+            transition: all .25s ease-in-out;
+            &:hover {
+                transform:scale(1.05)
+            }
+            margin-top:3rem;
+            @include break (576px) {//iphone6/7/8 === 414px
+                margin-top:5rem;
+            }
+        }
+
+        opacity:0;
+
+        /***hamburger content animation***/
+    }
+    &.expanded .nav-links{
+        opacity: 1;
+        clip-path: ellipse(100% 100% at center);
+    }
+
+}
+
+
+@keyframes show {
+    from { opacity:0}
+	to { opacity:1}
+}
+
+

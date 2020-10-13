@@ -1,0 +1,173 @@
+/*--------------------------------------------------------------
+Banner section
+--------------------------------------------------------------*/
+.banner {
+    /****remember to set up break point after grid**/
+    display:block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:101;
+    width:23rem;//important for galaxy layout
+    @include break (576px) {//iphone6/7/8 === 414px
+        width:30rem;
+    }
+    
+    // border: 5px solid green;//test
+    .banner-layout {
+        div {
+            display: inline-block;
+            vertical-align: bottom;
+        }
+    }
+
+        #logo {
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width:12rem;//only for mobile
+            @include break (576px) {//iphone6/7/8 === 414px
+                max-width:15.5rem;
+            }
+            // @include break()
+            animation: fill 1s ease-in 1s forwards;
+            // border: 5px solid red;//test
+        }
+        #sub-logo {
+            //a Taiwanese in ams
+            display: block;
+            margin-top:-3.6rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-size:0.8rem;
+            // position: absolute;
+        }
+        
+        a {
+            text-decoration:none;
+            color:inherit;
+            text-transform: uppercase;
+        }
+        
+        ul {
+            list-style:none;
+        }
+       
+    
+   
+
+}
+
+
+
+
+
+
+
+@keyframes fill {
+    0% {
+        fill:transparent
+    }
+    100% {
+        fill:$color-headlines
+    }
+}
+
+/*--------------------------------------------------------------
+SVG text animation
+--------------------------------------------------------------*/
+
+
+// letter 0 is 493.9664306640625
+// script.js:6 letter 1 is 584.2225341796875
+// script.js:6 letter 2 is 90.75326538085938
+// script.js:6 letter 3 is 506.4795227050781
+// script.js:6 letter 4 is 732.83984375
+// script.js:6 letter 5 is 568.926025390625
+// script.js:6 letter 6 is 586.5534057617188
+
+// script.js:6 letter 7 is 493.9664306640625
+// script.js:6 letter 8 is 584.2225341796875
+// script.js:6 letter 9 is 90.75326538085938
+// script.js:6 letter 10 is 506.4795227050781
+// script.js:6 letter 11 is 732.83984375
+// script.js:6 letter 12 is 568.926025390625
+// script.js:6 letter 13 is 586.5534057617188
+
+$total-line:0, 493, 584, 90.8, 505, 733, 569, 586.6;
+
+// #logo path:nth-child(1) not in the text
+// #logo path:nth-child(1) {
+//     stroke-dasharray: 569;
+//         stroke-dashoffset: 100%;
+//         animation: line-anim 2s ease forwards;
+// }
+@for $i from 2 through 8 {
+    #logo path:nth-child(#{$i}) {
+        stroke-dasharray: nth($total-line, $i);
+        stroke-dashoffset: nth($total-line, $i);
+        animation: line-anim 2s cubic-bezier(0,.67,.53,1.05) forwards;
+        animation-delay: ($i - 1.95) * 0.1s;//change the time here
+    }
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+
+
+// .home-page{
+//     display: block;
+//     position: absolute;
+//     top:50%;
+//     left:50%;
+//     transform: translate(-50%,-50%);
+//     border-color:$color-headlines;
+// }
+
+
+/******use when media query min-width is 767px (ipad)********/
+// .banner {
+//     display: flex;
+//     position: fixed;
+//     justify-content: space-between;
+//     align-items: center;
+//     align-content:center;
+//     z-index:100;
+//     color:$color-headlines;
+//     max-width:100vw;
+
+//     .left-banner,
+//     .right-banner,
+//     .center-banner{
+//         width:calc(100%/3);
+//     }
+    
+//     &.scrolled {//****havent created yet
+//         height:auto;
+//         background:$color-headlines;
+//         color:$color-backgrounds;
+//     }
+    
+//    
+        
+//     .lang-btn {
+//         display: flex;
+        
+//     }
+
+
+
+// }
+
+
+
+
+
+
+

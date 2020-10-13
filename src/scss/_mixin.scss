@@ -1,0 +1,46 @@
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin break($args...) {
+    @if length($args) == 1 {
+        @media screen and (min-width: nth($args, 1)) {
+            @content;
+        }
+    }
+    @if length($args) == 2 {
+        @media screen and (min-width: nth($args, 1)) and (max-width: nth($args, 2)) {
+            @content;
+        }
+    }
+    
+}
+
+@mixin transform($transform) {
+	-ms-transform: $transform;
+    -webkit-transform: $transform;
+    -o-transform:$transform;
+    -moz-transform: $transform;
+	transform: $transform;
+}
+
+@mixin animation-moveX($name, $from, $to) {
+    @keyframes #{$name} {
+      0% {transform: translate3d($from, 0, 0); opacity: 0;}
+      100% {transform: translate3d($to, 0, 0); opacity: 1;}
+    }
+  }
+
+  @mixin animation-moveY($name, $from, $to) {
+    @keyframes #{$name} {
+      0% {transform: translate3d(0, $from, 0); opacity: 0;}
+      100% {transform: translate3d(0, $to, 0); opacity: 1;}
+    }
+  }
