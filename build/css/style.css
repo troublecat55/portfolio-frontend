@@ -404,7 +404,7 @@ Banner section
 
 .banner #sub-logo {
   display: block;
-  margin-top: -3.6rem;
+  margin-top: -2.8rem;
   margin-left: auto;
   margin-right: auto;
   font-size: 0.8rem;
@@ -623,7 +623,7 @@ Titel img and sunburst background
   margin-top: -90%;
   width: 130%;
   /******sunburst-place-and-size*******/
-  animation: rotate 4s linear 0.5s infinite;
+  -webkit-animation: rotate 4s linear 0.5s infinite;
 }
 
 @media screen and (min-width: 576px) and (max-width: 690px) {
@@ -672,12 +672,12 @@ Titel img and sunburst background
   }
 }
 
-@keyframes rotate {
+@-webkit-keyframes rotate {
   from {
-    rotate: 0deg;
+    -webkit-rotate: 0deg;
   }
   to {
-    rotate: 360deg;
+    -webkit-rotate: 360deg;
   }
 }
 

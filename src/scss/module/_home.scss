@@ -137,7 +137,7 @@ Titel img and sunburst background
             } 
             
             
-            animation: rotate 4s linear 0.5s infinite;  
+            -webkit-animation: rotate 4s linear 0.5s infinite;  
             @include break ($breakpoint-pc) {//pc doesnt have sunburst when loading
                 opacity:0;
             }       
@@ -156,9 +156,9 @@ Titel img and sunburst background
 //     100% { opacity: 0}
 // } 
 
-@keyframes rotate {
-    from { rotate:0deg}
-	to { rotate:360deg}
+@-webkit-keyframes rotate {
+    from { -webkit-rotate:0deg}
+	to { -webkit-rotate:360deg}
 }
 
 
