@@ -95,9 +95,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_footer_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _preworks_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _preworks_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_preworks_js__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
+
+ // import * as $ from 'jquery';
 
 /********only-for-test ********/
 
@@ -114,45 +118,42 @@ $("document").ready(function () {
 
 /*******title-btn hover event********/
 
-$("document").ready(function () {
-  $(".title-btn").mouseenter(function (e) {
-    // console.log(e.target);
-    e.target.tagName === "BUTTON" ? $(".sunburst > #title-bg").animate({
-      opacity: 1
-    }, 200) : $(".sunburst > #title-bg").animate({
-      opacity: 0
-    }, 200);
-  });
-  $(".title-btn").mouseout(function (e) {
-    e.target.tagName === "BUTTON" ? $(".sunburst > #title-bg").animate({
-      opacity: 0
-    }, 200) : $(".sunburst > #title-bg").animate({
-      opacity: 1
-    }, 200);
-  }); // $(".title-img-area > #title-img")
-  //     .mouseenter(function(e){
-  //         e.target.tagName === "IMG" ?
-  //             $(".sunburst > #title-bg").animate({ opacity: 1},200) :
-  //             $(".sunburst > #title-bg").animate({ opacity: 0},200);
-  //     });
-  // $(".title-img-area > #title-img")
-  // .mouseout(function(e){
-  //     e.target.tagName === "IMG" ?
-  //             $(".sunburst > #title-bg").animate({ opacity: 0},200) :
-  //             $(".sunburst > #title-bg").animate({ opacity: 1},200);
-  //     });
-}); //     /*******hanburger manu click event********/
+$(".title-btn").mouseenter(function (e) {
+  // console.log(e.target);
+  e.target.tagName === "BUTTON" ? $(".sunburst > #title-bg").animate({
+    opacity: 1
+  }, 200) : $(".sunburst > #title-bg").animate({
+    opacity: 0
+  }, 200);
+});
+$(".title-btn").mouseout(function (e) {
+  e.target.tagName === "BUTTON" ? $(".sunburst > #title-bg").animate({
+    opacity: 0
+  }, 200) : $(".sunburst > #title-bg").animate({
+    opacity: 1
+  }, 200);
+}); // $(".title-img-area > #title-img")
+//     .mouseenter(function(e){
+//         e.target.tagName === "IMG" ?
+//             $(".sunburst > #title-bg").animate({ opacity: 1},200) :
+//             $(".sunburst > #title-bg").animate({ opacity: 0},200);
+//     });
+// $(".title-img-area > #title-img")
+// .mouseout(function(e){
+//     e.target.tagName === "IMG" ?
+//             $(".sunburst > #title-bg").animate({ opacity: 0},200) :
+//             $(".sunburst > #title-bg").animate({ opacity: 1},200);
+//     });
+//     /*******hanburger manu click event********/
 
-$("document").ready(function () {
-  $(".menu-btn").click(function (e) {
-    if (e.target.className.split(" ")[0] === 'menu-btn' || e.target.className.split(" ")[0] === 'menu-btn-hamburger') {
-      $(".menu-btn").toggleClass("expanded");
-      $(".menu-btn-hamburger").toggleClass("expanded");
-      $(".nav").toggleClass("expanded");
-    }
+$(".menu-btn").click(function (e) {
+  if (e.target.className.split(" ")[0] === 'menu-btn' || e.target.className.split(" ")[0] === 'menu-btn-hamburger') {
+    $(".menu-btn").toggleClass("expanded");
+    $(".menu-btn-hamburger").toggleClass("expanded");
+    $(".nav").toggleClass("expanded");
+  }
 
-    console.log(e.target);
-  });
+  console.log(e.target);
 });
 /********** click change my picture(mobile)********/
 
@@ -440,6 +441,15 @@ if (_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"].matches) {
 var date = new Date();
 var copyRight = document.getElementById("copyRight");
 copyRight.innerHTML = "<p>Copyright \xA9 ".concat(date.getFullYear(), " Yu, Chao</p>");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+console.log("hi");
+$.getJSON('.src/json/en-preworks.json', function (data) {
+  console.log(data);
+});
 
 /***/ })
 /******/ ]);

@@ -2,12 +2,13 @@ const path = require('path');
 const origin = 'src';
 const destination = 'build';
 const nodeExternals = require( 'webpack-node-externals');
+// const webpack = require("webpack");
 
 module.exports = {
     mode: 'none',
     entry: {
       index:`./${origin}/js/index.js`,
-      // script:`./${origin}/js/script.js`,
+      preworks:`./${origin}/js/preworks.js`,
     },
     output: { 
         path: path.resolve(__dirname , `./${destination}/js`),
@@ -26,9 +27,19 @@ module.exports = {
                 presets: ['@babel/preset-env']
               }
             },
-          }
+          },
+          // {
+          //   test:require.resolve('jquery'), 
+          //   loader: 'expose-loader?$!expose-loader?jQuery',
+          // }
         ]
     },
+  //   plugins: [
+  //     new webpack.ProvidePlugin({
+  //         $: "jquery",
+  //         jQuery: "jquery"
+  //     })
+  //  ],
     target: 'node',
     externals: [nodeExternals()],
     
