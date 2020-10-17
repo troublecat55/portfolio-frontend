@@ -6,6 +6,7 @@ const destination = 'build';
 const webpack= require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
+var jsonTransform = require('gulp-json-transform');
 // const babel= require('gulp-babel');
 
 
@@ -55,6 +56,18 @@ function js(cb) {
   cb();
 }
 
+function json(cb) {
+  src(`${origin}/json/*.json`)
+    .pipe(jsonTransform(function(json, file) {
+      const transformedJson = {
+        "newRootLevel": json
+      };
+      return transformedJson;
+    }))
+    .pipe(dest(`${destination}/json`))
+  cb();
+}
+
 function img(cb) {
   src(`${origin}/images/*.{png,svg}`)
     .pipe(cache(imagemin([
@@ -76,6 +89,7 @@ function watcher(cb) {
   watch(`${origin}/**/*.html`).on('change', series(html, browserSync.reload))
   watch(`${origin}/**/*.scss`).on('change', series(css, browserSync.reload))
   watch(`${origin}/**/*.js`).on('change', series(js, browserSync.reload))
+  watch(`${origin}/**/*.json`).on('change', series(json, browserSync.reload))
   watch(`${origin}/images/*.{png,svg}`).on('change', series(img, browserSync.reload))
   // watch(`${origin}/images/*.{png,svg}`, {cwd: './'}['img'])
   cb();
@@ -94,4 +108,4 @@ function server(cb) {
 
 
 
-exports.default = series(clean, parallel(html, css, js,  img), server, watcher);
+exports.default = series(clean, parallel(html, css, js, json, img), server, watcher);

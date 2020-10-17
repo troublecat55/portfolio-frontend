@@ -1,7 +1,7 @@
 const path = require('path');
 const origin = 'src';
 const destination = 'build';
-const nodeExternals = require( 'webpack-node-externals');
+// const nodeExternals = require( 'webpack-node-externals');
 // const webpack = require("webpack");
 
 module.exports = {
@@ -41,7 +41,7 @@ module.exports = {
   //     })
   //  ],
     target: 'node',
-    externals: [nodeExternals()],
+    // externals: [nodeExternals()],
     
 }
 
