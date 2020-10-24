@@ -91,8 +91,9 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _loading_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _intro_animation_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
+/* harmony import */ var _loading_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_loading_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _intro_animation_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_footer_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _preworks_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
@@ -193,77 +194,156 @@ document.querySelector('#title-img').addEventListener('click', function (e) {
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+// import {imgArray} from './portfolio-rotate.js';
+// const img_Speed = 8;
+// var counter = 0;
+// // var timer = 300;
+// function loaderRotate() {
+//     if(counter > imgArray.length - 1) {
+//         counter = 0;
+//     }
+//     document.getElementById('loader').src = imgArray[counter++].src;
+//     // setTimeout(imgRotate, timer);
+//     // window.requestAnimationFrame(imgRotate);
+//     // use requestAnimationFrame instead of settimeout to get the smooth animation
+// }
+// //inspired by Web Dev Simplified "How To Code The Snake Game In Javascript"
+// let lastRenderedTime = 0; 
+// let stopped = true;
+// let requestId = 0;
+// function timer(currentTime) {
+//     if (stopped == false) {
+//         requestId = window.requestAnimationFrame(timer);
+//         const secondsSinceLastRendered = (currentTime - lastRenderedTime) / 1000;//to milliseconds //0.00....
+//         if (secondsSinceLastRendered < 1 / img_Speed) {
+//             return;
+//         }//if img_Speed = 2 then start caculate larger than 0.5 seconds 
+//         lastRenderedTime = currentTime;//first update the lastRenderedTime
+//         loaderRotate();
+//     }
+// }
+// // window.onload = requestAnimationFrame(timer);
+// // imgRotate();
+// function startAnimation() {
+//     stopped = false;
+//     requestAnimationFrame(timer);
+//     loaderRotate();
+// }
+// export function stopAnimation() {
+//     if (requestId) {
+//         window.cancelAnimationFrame(requestId);
+//         stopped = true;
+//     }
+// }
+// startAnimation();
+// function loader() {
+//     $( ".loading p" ).html("Loading...")
+// }
+// loader();
+// $(window).on('load', function(){
+//     removeLoader();
+//     // removeLoader() //wait for page load PLUS two seconds.
+// });
+// function removeLoader(){
+//     $( ".loading" ).fadeOut(1000, function() {
+//       // fadeOut complete. Remove the loading div
+//     $( ".loading" ).remove();
+//        //makes page more lightweight 
+//   });  
+// }
+
+/***/ }),
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/************** GSAP and else***************/
+// import ScrollMagic from 'scrollmagic'
+// import '../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
+// import '../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic'
+// import '../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
+// import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 
-var img_Speed = 8;
-var counter = 0; // var timer = 300;
+console.log(_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"]); // const breakPointPc = window.matchMedia("(min-width: 801px)")
 
-function loaderRotate() {
-  if (counter > _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["imgArray"].length - 1) {
-    counter = 0;
-  }
+gsap.from('#sub-logo ', {
+  opacity: 0,
+  delay: 1.5,
+  duration: 1.5,
+  ease: 'Power4.easeInOut'
+}); // gsap.from('.lang-btn ',{opacity:0, delay:1, duration:1, ease:'Power4.easeInOut'})
+// gsap.fromTo('.menu-btn ',{opacity:0},{opacity:1, delay:1, duration:1, ease:'Power4.easeInOut'})
 
-  document.getElementById('loader').src = _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["imgArray"][counter++].src; // setTimeout(imgRotate, timer);
-  // window.requestAnimationFrame(imgRotate);
-  // use requestAnimationFrame instead of settimeout to get the smooth animation
-} //inspired by Web Dev Simplified "How To Code The Snake Game In Javascript"
-
-
-var lastRenderedTime = 0;
-var stopped = true;
-var requestId = 0;
-
-function timer(currentTime) {
-  if (stopped == false) {
-    requestId = window.requestAnimationFrame(timer);
-    var secondsSinceLastRendered = (currentTime - lastRenderedTime) / 1000; //to milliseconds //0.00....
-
-    if (secondsSinceLastRendered < 1 / img_Speed) {
-      return;
-    } //if img_Speed = 2 then start caculate larger than 0.5 seconds 
-
-
-    lastRenderedTime = currentTime; //first update the lastRenderedTime
-
-    loaderRotate();
-  }
-} // window.onload = requestAnimationFrame(timer);
-// imgRotate();
-
-
-function startAnimation() {
-  stopped = false;
-  requestAnimationFrame(timer);
-  loaderRotate();
-}
-
-function stopAnimation() {
-  if (requestId) {
-    window.cancelAnimationFrame(requestId);
-    stopped = true;
-  }
-}
-
-startAnimation();
-$(window).on('load', function () {
-  setTimeout(removeLoader, 1000); // removeLoader() //wait for page load PLUS two seconds.
+gsap.from('.intro ', {
+  opacity: 0,
+  delay: 1.5,
+  duration: 1.5,
+  ease: 'Power4.easeInOut'
+});
+gsap.from('.colophon ', {
+  opacity: 0,
+  delay: 1.5,
+  duration: 1.5,
+  ease: 'Power4.easeInOut'
 });
 
-function removeLoader() {
-  $(".loading").fadeOut(500, function () {
-    // fadeOut complete. Remove the loading div
-    $(".loading").remove(); //makes page more lightweight 
-
-    stopAnimation();
+if (!_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"].matches) {
+  //if bp matches title-bg opacity0 in home.scss
+  gsap.from('#title-bg ', {
+    opacity: 0,
+    duration: 1.5,
+    ease: 'Power4.easeInOut'
+  });
+  gsap.to('#title-bg ', {
+    opacity: 0,
+    delay: 1,
+    duration: 1.5,
+    ease: 'Power3.easeInOut'
+  });
+  gsap.from('#title-img ', {
+    opacity: 0,
+    duration: 0.5,
+    ease: 'Power4.easeInOut'
   });
 }
 
+if (_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"].matches) {
+  gsap.from('#title-img ', {
+    opacity: 0,
+    delay: 1.5,
+    y: 100,
+    duration: 0.5,
+    ease: 'Power4.easeInOut'
+  });
+  gsap.from('.sidetext-ability ', {
+    opacity: 0,
+    delay: 1.5,
+    y: 100,
+    duration: 0.5,
+    ease: 'Power2.easeInOut'
+  });
+  gsap.from('.currentLearning-content  ', {
+    opacity: 0,
+    delay: 1.5,
+    y: 100,
+    duration: 0.5,
+    ease: 'Power4.easeInOut'
+  });
+  gsap.from('.ad-marker-area  ', {
+    opacity: 0,
+    delay: 1.5,
+    y: 100,
+    duration: 0.5,
+    ease: 'Power4.easeInOut'
+  }); // gsap.from('.title-btn ',{ opacity:0,delay:1,y:100, duration:0.5, ease:'Power4.easeInOut'})
+}
+
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -345,94 +425,6 @@ document.querySelector('#title-img').addEventListener('mouseover', function (e) 
     stopAnimation();
   }, false);
 }, false);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/************** GSAP and else***************/
-// import ScrollMagic from 'scrollmagic'
-// import '../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
-// import '../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic'
-// import '../../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
-// import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
-
-console.log(_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"]); // const breakPointPc = window.matchMedia("(min-width: 801px)")
-
-gsap.from('#sub-logo ', {
-  opacity: 0,
-  delay: 1.5,
-  duration: 1.5,
-  ease: 'Power4.easeInOut'
-}); // gsap.from('.lang-btn ',{opacity:0, delay:1, duration:1, ease:'Power4.easeInOut'})
-// gsap.fromTo('.menu-btn ',{opacity:0},{opacity:1, delay:1, duration:1, ease:'Power4.easeInOut'})
-
-gsap.from('.intro ', {
-  opacity: 0,
-  delay: 1.5,
-  duration: 1.5,
-  ease: 'Power4.easeInOut'
-});
-gsap.from('.colophon ', {
-  opacity: 0,
-  delay: 1.5,
-  duration: 1.5,
-  ease: 'Power4.easeInOut'
-});
-
-if (!_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"].matches) {
-  //if bp matches title-bg opacity0 in home.scss
-  gsap.from('#title-bg ', {
-    opacity: 0,
-    duration: 1.5,
-    ease: 'Power4.easeInOut'
-  });
-  gsap.to('#title-bg ', {
-    opacity: 0,
-    delay: 1,
-    duration: 1.5,
-    ease: 'Power3.easeInOut'
-  });
-  gsap.from('#title-img ', {
-    opacity: 0,
-    duration: 0.5,
-    ease: 'Power4.easeInOut'
-  });
-}
-
-if (_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"].matches) {
-  gsap.from('#title-img ', {
-    opacity: 0,
-    delay: 1.5,
-    y: 100,
-    duration: 0.5,
-    ease: 'Power4.easeInOut'
-  });
-  gsap.from('.sidetext-ability ', {
-    opacity: 0,
-    delay: 1.5,
-    y: 100,
-    duration: 0.5,
-    ease: 'Power2.easeInOut'
-  });
-  gsap.from('.currentLearning-content  ', {
-    opacity: 0,
-    delay: 1.5,
-    y: 100,
-    duration: 0.5,
-    ease: 'Power4.easeInOut'
-  });
-  gsap.from('.ad-marker-area  ', {
-    opacity: 0,
-    delay: 1.5,
-    y: 100,
-    duration: 0.5,
-    ease: 'Power4.easeInOut'
-  }); // gsap.from('.title-btn ',{ opacity:0,delay:1,y:100, duration:0.5, ease:'Power4.easeInOut'})
-}
 
 /***/ }),
 /* 4 */

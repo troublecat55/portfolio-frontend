@@ -346,21 +346,21 @@ Variables
 --------------------------------------------------------------*/
 .loading {
   background-color: black;
+  color: #F0FFF0;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
+  font-size: 5rem;
 }
 
 .loading #loader {
   position: absolute;
-  width: 50%;
+  width: 100vw;
   height: auto;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  top: 30%;
   z-index: 100;
 }
 

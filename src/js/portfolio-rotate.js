@@ -1,6 +1,4 @@
-
 // /********** mouseover rotate my picture(PC)********/
-   
 const img_Speed = 6;//how many times one picture changes per second
 export var imgArray = [];
 const img_Items = 8;
