@@ -96,13 +96,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_footer_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _preworks_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
-/* harmony import */ var _preworks_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_preworks_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
- // import * as $ from 'jquery';
+ // import './preworks.js';
+// import * as $ from 'jquery';
 
 /********only-for-test ********/
 
@@ -145,17 +146,7 @@ $(".title-btn").mouseout(function (e) {
 //             $(".sunburst > #title-bg").animate({ opacity: 0},200) :
 //             $(".sunburst > #title-bg").animate({ opacity: 1},200);
 //     });
-//     /*******hanburger manu click event********/
 
-$(".menu-btn").click(function (e) {
-  if (e.target.className.split(" ")[0] === 'menu-btn' || e.target.className.split(" ")[0] === 'menu-btn-hamburger') {
-    $(".menu-btn").toggleClass("expanded");
-    $(".menu-btn-hamburger").toggleClass("expanded");
-    $(".nav").toggleClass("expanded");
-  }
-
-  console.log(e.target);
-});
 /********** click change my picture(mobile)********/
 
 /********* change img for mobile*********/
@@ -438,21 +429,16 @@ copyRight.innerHTML = "<p>Copyright \xA9 ".concat(date.getFullYear(), " Yu, Chao
 /* 5 */
 /***/ (function(module, exports) {
 
-console.log("hi");
-$.getJSON("./json/en-preworks.json", function (data) {
-  console.log(data);
-}); // var settings = {
-//     "url": "./build/json/en-preworks.json",
-//     "method": "GET",
-//     "dataType":   "jsonp", 
-//     "timeout": 0,
-//     "headers": {
-//       "Content-Type": "application/json"
-//     },
-//   };
-//   $.ajax(settings).done(function (data) {
-//     console.log(JSON.stringify(data));
-//   });
+//     /*******hanburger manu click event********/
+$(".menu-btn").click(function (e) {
+  if (e.target.className.split(" ")[0] === 'menu-btn' || e.target.className.split(" ")[0] === 'menu-btn-hamburger') {
+    $(".menu-btn").toggleClass("expanded");
+    $(".menu-btn-hamburger").toggleClass("expanded");
+    $(".nav").toggleClass("expanded");
+  }
+
+  console.log(e.target);
+});
 
 /***/ })
 /******/ ]);

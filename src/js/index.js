@@ -2,7 +2,8 @@ import './loading.js';
 import './intro-animation.js';
 import './portfolio-rotate.js';
 import './footer.js';
-import './preworks.js';
+import './hamburger.js';
+// import './preworks.js';
 // import * as $ from 'jquery';
 
 
@@ -53,20 +54,7 @@ $(".title-btn")
 
 
 
-//     /*******hanburger manu click event********/
 
-
-$(".menu-btn")
-    .click(function(e) {
-        if (e.target.className.split(" ")[0] === 'menu-btn'||
-            e.target.className.split(" ")[0] === 'menu-btn-hamburger') 
-            {
-                $(".menu-btn").toggleClass("expanded");
-                $(".menu-btn-hamburger").toggleClass("expanded");
-                $(".nav").toggleClass("expanded");
-            }
-        console.log(e.target);
-    });
 
 
 

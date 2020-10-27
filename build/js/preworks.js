@@ -81,13 +81,34 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
 
 /***/ 5:
 /***/ (function(module, exports) {
+
+//     /*******hanburger manu click event********/
+$(".menu-btn").click(function (e) {
+  if (e.target.className.split(" ")[0] === 'menu-btn' || e.target.className.split(" ")[0] === 'menu-btn-hamburger') {
+    $(".menu-btn").toggleClass("expanded");
+    $(".menu-btn-hamburger").toggleClass("expanded");
+    $(".nav").toggleClass("expanded");
+  }
+
+  console.log(e.target);
+});
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_0__);
 
 console.log("hi");
 $.getJSON("./json/en-preworks.json", function (data) {

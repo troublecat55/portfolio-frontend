@@ -6,14 +6,14 @@ Titel img and sunburst background
     background: none;
     overflow-x:hidden;
     overflow-y:hidden;
-    
+    display:grid;
     // margin-top:10rem;//vertical change
     /****diaplay:block for mobile(display:grid for pc)*****/
-    @include break(0px, $breakpoint-pc) {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    } 
+    //* @include break(0px, $breakpoint-pc) {
+    //     display: block;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // } 
 
     /****size for whole title img area*****/
     // border:2px solid black;//test
@@ -38,14 +38,19 @@ Titel img and sunburst background
         max-height: 45rem;
     }
     
-    
+    #title-img,
+    .sunburst {
+        grid-row: 1;
+        grid-column:1;
+    }
 
     #title-img{/****my picture*****/
         // background: url("./images/sunburst-bg.svg");
         // border: 2px solid black;
         cursor: pointer;
-        margin-top:-20%;
-        margin-left:-22%;
+        
+        // margin-top:-20%;
+        // margin-left:-22%;
         position: relative;
         z-index:1;
         
@@ -63,6 +68,7 @@ Titel img and sunburst background
         }
         @include break (576px,690px) {
             max-width:125%;
+            margin-top:-20%;
             margin-left:-5%;
         }
         @include break (690px,$breakpoint-pc) {
@@ -72,21 +78,23 @@ Titel img and sunburst background
         }
         @include break ($breakpoint-pc,900px) {
             margin-top:1rem;
+            margin-left:-20%;
             // transition: .2s  ease-in-out;
         }
         @include break (900px,1100px) {
             margin-top:-2rem;
-            margin-left:-21%;
+            margin-left:-20%;
             // transition: all .2s ease-in-out;
         }
         @include break (1100px,1300px) {
             max-width:140%;
             margin-top:-3rem;
-            margin-left:-11%;
+            margin-left:-10%;
             // transition: all .2s ease-in-out;
         }
         @include break (1300px,1700px) {
             margin-top:-2rem;
+            margin-left:-22%;
             // transition: all .2s ease-in-out;
         }
     
@@ -101,37 +109,42 @@ Titel img and sunburst background
         // @include break (0, $breakpoint-pc) {//mobile sunburst fade in 2s//kindle is 800px
         //     animation:opacityNone 1.5s forwards ease-out 1  
         // }
-        position: relative;
+        // position: relative;
         z-index:0;
         #title-bg {//rotate sunburst
-            display: block;
+            // display: block;
             text-align: center;//center 25% (depends on width)
             margin-left:-15%;//move left 25% (depends on width)
-            margin-top:-90%;
+            // margin-top:-90%;
             width:130%;
-            /******sunburst-place-and-size*******/
+    //         /******sunburst-place-and-size*******/
+            @include break (0,576px) {
+                margin-top:-15%;
+                margin-left:-15%;
+                width:130%;
+            } 
             @include break (576px,690px) {
-                margin-top:-80%;
+                margin-top:-15%;
                 margin-left:-15%;
                 width:130%;
             } 
             @include break (690px,$breakpoint-pc) {
-                margin-top:-75%;
+                margin-top:-10%;
                 margin-left:-5%;
                 width:110%;
             } 
             @include break ($breakpoint-pc, 1000px) {
-                margin-top:-165%;
+                margin-top:-30%;
                 margin-left:-75%;
                 width:250%;
             } 
             @include break (1000px,1200px) {
-                margin-top:-145%;
+                margin-top:-30%;
                 margin-left:-50%;
                 width:200%;
             } 
             @include break (1200px) {
-                margin-top:-135%;
+                margin-top:-30%;
                 margin-left:-50%;
                 width:200%;
             } 

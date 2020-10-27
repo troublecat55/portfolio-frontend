@@ -1,3 +1,5 @@
+import './hamburger.js';
+
 console.log("hi");
 $.getJSON("./json/en-preworks.json", function(data) {
     console.log(data)
