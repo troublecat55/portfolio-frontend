@@ -1,36 +1,41 @@
 @include break(0px,$breakpoint-pc) {
-    section[class^="sidetext-"] {
+    section[class^="sidetext-"],
+    .current-ability {
         display:none;
     }
 
 }
+@include break($breakpoint-pc,1300px) {
+    .current-ability {
+        font-size:1rem;
+        line-height: 1.5rem;
+    }
+}
 
 
-@include break(1300px,1500px) {
+@include break(1300px,1600px) {
     section[class^="sidetext-"] p {
         font-size:1rem;
         line-height: 1.4rem;
     }
-
-}
-@include break(1500px,1600px) {
-    section[class^="sidetext-"] p {
-        font-size:1rem;
-        line-height: 1.4rem;
-    }
-    .ability-content p{
-        font-size: 1.1rem;
+    .current-ability {
+        font-size:0.6rem;
+        line-height: 1.1rem;
     }
 
+
 }
+
 @include break(1600px,1700px) {
     section[class^="sidetext-"] p {
         font-size:1rem;
         line-height: 1.5rem;
     }
-    .ability-content p{
-        font-size: 1.4rem;
+    .current-ability {
+        font-size:0.8rem;
+        line-height: 1.5rem;
     }
+
 
 }
 @include break(1700px) {
@@ -38,10 +43,11 @@
         font-size:1rem;
         line-height: 1.6rem;
     }
-    .ability-content p{
-        font-size: 1rem;
-
+    .current-ability {
+        font-size:0.8rem;
+        line-height: 1.5rem;
     }
+
 
 }
 @include break (1300px) {
@@ -89,10 +95,10 @@
     
     
 
-    /********sidetext-ability**********/
+    /********current-ability**********/
     @supports (display: flex) {
 
-		.sidetext-ability ul {
+		.current-ability ul {
 			display: flex;
             justify-content: space-evenly;
             border-top: 2px solid $color-main;//test
@@ -105,11 +111,11 @@
 
 	}
     
-    .sidetext-ability ul {
+    .current-ability ul {
         // margin-right: 1rem;
         padding-left: 0;
     }
-    .sidetext-ability li {
+    .current-ability li {
         // margin-bottom: 1em;
         // padding-left:3rem;
         // padding-right:3rem;
@@ -117,10 +123,7 @@
         list-style-type: none;
     }
     
-    .ability-content p{
-        font-size: 0.85rem;
-        line-height: 1.5rem;
-    }
+
     
 }
 

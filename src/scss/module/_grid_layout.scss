@@ -48,7 +48,7 @@
             // grid-column:3/4;
             // grid-row:4/5;
         }
-        .sidetext-ability{
+        .current-ability{
             grid-column:3/4;
             grid-row:3/4;
         }
@@ -143,12 +143,12 @@
         }
         .sidetext-currentLearning {
             grid-column:3/4;
-            grid-row:2/3;
+            grid-row:2/4;
         }
-        .sidetext-ability{
-            display:none;
-            // grid-column:2/4;
-            // grid-row:4/5;
+        .current-ability{
+            // display:none;
+            grid-column:5/7;
+            grid-row:3/4;
         }
         
         .sidetext-advertising-marketer {

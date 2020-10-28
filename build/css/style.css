@@ -1128,7 +1128,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
     .sidetext-currentLearning {
       display: none;
     }
-    .sidetext-ability {
+    .current-ability {
       grid-column: 3/4;
       grid-row: 3/4;
     }
@@ -1186,10 +1186,11 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
     }
     .sidetext-currentLearning {
       grid-column: 3/4;
-      grid-row: 2/3;
+      grid-row: 2/4;
     }
-    .sidetext-ability {
-      display: none;
+    .current-ability {
+      grid-column: 5/7;
+      grid-row: 3/4;
     }
     .sidetext-advertising-marketer {
       grid-column: 4/5;
@@ -1211,25 +1212,27 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
 }
 
 @media screen and (min-width: 0px) and (max-width: 801px) {
-  section[class^="sidetext-"] {
+  section[class^="sidetext-"],
+  .current-ability {
     display: none;
   }
 }
 
-@media screen and (min-width: 1300px) and (max-width: 1500px) {
-  section[class^="sidetext-"] p {
+@media screen and (min-width: 801px) and (max-width: 1300px) {
+  .current-ability {
     font-size: 1rem;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
   }
 }
 
-@media screen and (min-width: 1500px) and (max-width: 1600px) {
+@media screen and (min-width: 1300px) and (max-width: 1600px) {
   section[class^="sidetext-"] p {
     font-size: 1rem;
     line-height: 1.4rem;
   }
-  .ability-content p {
-    font-size: 1.1rem;
+  .current-ability {
+    font-size: 0.6rem;
+    line-height: 1.1rem;
   }
 }
 
@@ -1238,8 +1241,9 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  .ability-content p {
-    font-size: 1.4rem;
+  .current-ability {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -1248,8 +1252,9 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
     font-size: 1rem;
     line-height: 1.6rem;
   }
-  .ability-content p {
-    font-size: 1rem;
+  .current-ability {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -1278,25 +1283,21 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
 }
 
 @media screen and (min-width: 801px) {
-  /********sidetext-ability**********/
+  /********current-ability**********/
   @supports (display: flex) {
-    .sidetext-ability ul {
+    .current-ability ul {
       display: flex;
       justify-content: space-evenly;
       border-top: 2px solid black;
       border-bottom: 2px solid black;
     }
   }
-  .sidetext-ability ul {
+  .current-ability ul {
     padding-left: 0;
   }
-  .sidetext-ability li {
+  .current-ability li {
     background: #F0FCFF;
     list-style-type: none;
-  }
-  .ability-content p {
-    font-size: 0.85rem;
-    line-height: 1.5rem;
   }
 }
 
