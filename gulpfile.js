@@ -59,9 +59,7 @@ function js(cb) {
 function json(cb) {
   src(`${origin}/json/*.json`)
     .pipe(jsonTransform(function(json, file) {
-      const transformedJson = {
-        "newRootLevel": json
-      };
+      const transformedJson =  json;
       return transformedJson;
     }))
     .pipe(dest(`${destination}/json`))

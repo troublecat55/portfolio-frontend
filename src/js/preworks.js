@@ -1,20 +1,35 @@
 import './hamburger.js';
 
-console.log("hi");
-$.getJSON("./json/en-preworks.json", function(data) {
-    console.log(data)
-})
-// var settings = {
-//     "url": "./build/json/en-preworks.json",
-//     "method": "GET",
-//     "dataType":   "jsonp", 
-//     "timeout": 0,
-//     "headers": {
-//       "Content-Type": "application/json"
-//     },
-//   };
-  
-//   $.ajax(settings).done(function (data) {
-//     console.log(JSON.stringify(data));
-//   });
+const enPreworksJson = "./json/en-preworks.json";
+$.getJSON(enPreworksJson)
+    .done(function(data) {
+    // console.log(data)
+        var output = '<ul class="cards">';
+        $.each(data, function(key, value) {
+            output += 
+            `<li class="card">
+                <a href="#">
+                    <h2>${value.title}</h2>
+                    <p>${value.details.year}</p>
+                    <p>${value.details.company}</p>
+            </li>`
+            // console.log(`${key}`)
+            // console.log(`${value.title}`)
+            // console.log(`${Object.keys(value.language)}`)
+            // console.log(`${value.details.year}`)
+            // console.log(`${value.details.company}`)
+            // Object.keys(value.language).map(k => console.log(value.language[k]))
+
+        });
+        output += '</ul>';
+        console.log(output);
+        $('#preworks-content').html(output);
+    })
+    .fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            console.log( `Request Failed: ${err} `);
+            console.log(`http status: ${jqxhr.status}`)
+    })
+
+
 
