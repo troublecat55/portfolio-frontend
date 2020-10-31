@@ -1,4 +1,5 @@
 import './hamburger.js';
+import './footer.js';
 
 const enPreworksJson = "./json/en-preworks.json";
 $.getJSON(enPreworksJson)
@@ -9,9 +10,10 @@ $.getJSON(enPreworksJson)
             output += 
             `<li class="card">
                 <a href="#">
-                    <h2>${value.title}</h2>
-                    <p>${value.details.year}</p>
-                    <p>${value.details.company}</p>
+                    <h2 class="works-title">${value.title}</h2>
+                    <p class="works-mark">${value.details.year} at ${value.details.company} in ${value.details.country[0]}</p>
+                   
+                    
             </li>`
             // console.log(`${key}`)
             // console.log(`${value.title}`)

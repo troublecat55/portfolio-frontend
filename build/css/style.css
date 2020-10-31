@@ -1152,7 +1152,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
       max-width: none;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 0.5fr 2fr 1fr;
+      grid-template-rows: 0.5fr 2fr 6em;
     }
     .headline {
       grid-column: 1/4;
@@ -1302,6 +1302,93 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
 }
 
 /*****sidetext-advertising-marketer*********/
+.cards {
+  margin: 0;
+  padding: 0 50px 50px 50px;
+  list-style-type: none;
+}
+
+.cards .card {
+  display: block;
+  padding: 50px;
+}
+
+.cards .card a {
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  color: black;
+  transition: all .2s;
+}
+
+@media screen and (min-width: 0) and (max-width: 801px) {
+  .works-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1300px) {
+  .works-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .works-title {
+    font-size: 4rem;
+  }
+}
+
+@supports (grid-area: auto) {
+  @media screen and (min-width: 801px) {
+    /****************************************
+            full page layout
+        ****************************************/
+    .works-site {
+      max-width: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 0.5fr auto 6em;
+    }
+    .works-headline {
+      grid-column: 1/4;
+      grid-row: 1/2;
+    }
+    .works-main-area {
+      grid-column: 1/4;
+      grid-row: 2/3;
+    }
+    .works-colophon {
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
+  }
+  @media screen and (min-width: 801px) and (max-width: 1300px) {
+    /****************************************
+            grids layout all cards
+        ****************************************/
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: 1300px) {
+    /****************************************
+            grids layout all cards
+        ****************************************/
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card {
+      margin-bottom: 0;
+    }
+  }
+}
+
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

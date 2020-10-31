@@ -29,6 +29,7 @@ if(breakPointPc.matches) {
     gsap.from('#title-img ',{ opacity:0,delay:1.5,y:100, duration:0.5, ease:'Power4.easeInOut'})
     gsap.from('.sidetext-ability ',{ opacity:0, delay:1.5,y:100, duration:0.5, ease:'Power2.easeInOut'})
     gsap.from('.currentLearning-content  ',{ opacity:0, delay:1.5,y:100, duration:0.5, ease:'Power4.easeInOut'})
+    gsap.from('.current-ability',{ opacity:0, delay:1.5,y:100, duration:0.5, ease:'Power4.easeInOut'})
     gsap.from('.ad-marker-area  ',{ opacity:0, delay:1.5,y:100, duration:0.5, ease:'Power4.easeInOut'})
     // gsap.from('.title-btn ',{ opacity:0,delay:1,y:100, duration:0.5, ease:'Power4.easeInOut'})
 }

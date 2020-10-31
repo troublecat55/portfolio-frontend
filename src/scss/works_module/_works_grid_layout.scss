@@ -1,0 +1,56 @@
+@supports (grid-area: auto) {
+    @include break($breakpoint-pc) {
+        /****************************************
+            full page layout
+        ****************************************/
+        .works-site{
+            max-width: none;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows:0.5fr auto 6em;
+        }
+        .works-headline {
+            grid-column:1/4;
+            grid-row: 1/2;
+        }
+        .works-main-area {
+            grid-column:1/4;
+            grid-row: 2/3;
+        } 
+        .works-colophon {
+            grid-column:2/3;
+            grid-row: 3/4;
+            
+        }
+
+    }
+    
+    @include break($breakpoint-pc,1300px) {
+
+        /****************************************
+            grids layout all cards
+        ****************************************/
+        .cards {
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .card {
+            margin-bottom:0;
+        }
+
+    }
+    @include break(1300px) {
+        
+        /****************************************
+            grids layout all cards
+        ****************************************/
+        .cards {
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .card {
+            margin-bottom:0;
+        }
+       
+    }
+}

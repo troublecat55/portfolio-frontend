@@ -84,9 +84,20 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports) {
 
-/***/ 5:
+var date = new Date();
+var copyRight = document.getElementById("copyRight");
+copyRight.innerHTML = "<p>Copyright \xA9 ".concat(date.getFullYear(), " Yu, Chao</p>");
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 //     /*******hanburger manu click event********/
@@ -101,21 +112,23 @@ $(".menu-btn").click(function (e) {
 });
 
 /***/ }),
-
-/***/ 6:
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_footer_js__WEBPACK_IMPORTED_MODULE_1__);
+
 
 var enPreworksJson = "./json/en-preworks.json";
 $.getJSON(enPreworksJson).done(function (data) {
   // console.log(data)
   var output = '<ul class="cards">';
   $.each(data, function (key, value) {
-    output += "<li class=\"card\">\n                <a href=\"#\">\n                    <h2>".concat(value.title, "</h2>\n                    <p>").concat(value.details.year, "</p>\n                    <p>").concat(value.details.company, "</p>\n            </li>"); // console.log(`${key}`)
+    output += "<li class=\"card\">\n                <a href=\"#\">\n                    <h2 class=\"works-title\">".concat(value.title, "</h2>\n                    <p class=\"works-mark\">").concat(value.details.year, " at ").concat(value.details.company, " in ").concat(value.details.country[0], "</p>\n                   \n                    \n            </li>"); // console.log(`${key}`)
     // console.log(`${value.title}`)
     // console.log(`${Object.keys(value.language)}`)
     // console.log(`${value.details.year}`)
@@ -132,5 +145,4 @@ $.getJSON(enPreworksJson).done(function (data) {
 });
 
 /***/ })
-
-/******/ });
+/******/ ]);

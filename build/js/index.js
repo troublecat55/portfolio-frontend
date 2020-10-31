@@ -324,6 +324,13 @@ if (_portfolio_rotate_js__WEBPACK_IMPORTED_MODULE_0__["breakPointPc"].matches) {
     duration: 0.5,
     ease: 'Power4.easeInOut'
   });
+  gsap.from('.current-ability', {
+    opacity: 0,
+    delay: 1.5,
+    y: 100,
+    duration: 0.5,
+    ease: 'Power4.easeInOut'
+  });
   gsap.from('.ad-marker-area  ', {
     opacity: 0,
     delay: 1.5,
