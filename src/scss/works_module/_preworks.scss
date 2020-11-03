@@ -1,27 +1,37 @@
 .cards {
 	margin: 0;
-	padding: 0 50px 50px 50px;
+	padding: 0;
     list-style-type: none;
     .card {
-        display: block;
-        padding:50px;
+        
         a {
             text-decoration: none;
             width:100%;
-            text-align: center;
+            
             color: $color-main;
             transition: all .2s;
         }
     }
 }
+.card img {
+    width:100%;
+    height:auto;
+}
 
-// .works-mark {
-//     padding-bottom:50px;
-// }
 @include break(0,$breakpoint-pc) {
-    .works-title{
-        font-size: 2rem;
+    .card{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        padding:3rem;
+        // width:100vw;
     }
+    .works-title{
+        font-size: 1.5rem;
+    }
+    // .card img {
+    //     display:none;
+    // }
 
 }
 
@@ -35,9 +45,46 @@
 
 @include break(1300px) {
     .works-title{
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
 }
+
+@include break($breakpoint-pc) {
+    
+/*****************************
+overlay image and text
+***********************************/
+    .card {
+        display:grid;
+        padding:0;
+        text-align: center;
+    }
+    .card img,
+    .caption {
+        grid-column:1;
+        grid-row:1;
+    
+    }
+    
+    .caption {
+    	padding: 1em;
+    	background: none;
+    	color: $color-main;
+    	transition: all .4s;
+    }
+    a:focus .caption,
+    a:hover .caption {
+    	background:$hover;
+    }
+    
+    .caption-title {
+    	margin: 0;
+    	line-height: 1.1em;
+    }
+
+}
+
+
 
 

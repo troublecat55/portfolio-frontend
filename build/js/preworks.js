@@ -123,26 +123,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_footer_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
+var breakPointPc = window.matchMedia("(min-width: 801px)");
 var enPreworksJson = "./json/en-preworks.json";
 $.getJSON(enPreworksJson).done(function (data) {
   // console.log(data)
-  var output = '<ul class="cards">';
+  var outputPc = '<ul class="cards">';
+  var outputMb = '<ul class="cards">';
   $.each(data, function (key, value) {
-    output += "<li class=\"card\">\n                <a href=\"#\">\n                    <h2 class=\"works-title\">".concat(value.title, "</h2>\n                    <p class=\"works-mark\">").concat(value.details.year, " at ").concat(value.details.company, " in ").concat(value.details.country[0], "</p>\n                   \n                    \n            </li>"); // console.log(`${key}`)
-    // console.log(`${value.title}`)
-    // console.log(`${Object.keys(value.language)}`)
-    // console.log(`${value.details.year}`)
-    // console.log(`${value.details.company}`)
-    // Object.keys(value.language).map(k => console.log(value.language[k]))
+    outputPc += "   <li class=\"card\">\n                        <a href=\"#\">\n                            <figure class=\"card\">\n                                <img src=\"images/".concat(value.image, "\" alt=\"images of my articles\">\n                                <figcaption class=\"caption\">\n                                    <h2 class=\"works-title\">").concat(value.title, "</h2>\n                                    <p class=\"works-mark\">").concat(value.details.year, " at ").concat(value.details.company, " in ").concat(value.details.country[0], "</p>\n                                </figcaption>\n                            </figure>\n                        </a>\n                    </li>\n                    ");
+    outputMb += "   <li class=\"card\">\n                        <a href=\"#\">\n                            <img src=\"images/".concat(value.image, "\" alt=\"images of my articles\">\n                            <h2 class=\"works-title\">").concat(value.title, "</h2>\n                            <p class=\"works-mark\">").concat(value.details.year, " at ").concat(value.details.company, " in ").concat(value.details.country[0], "</p>\n                        </a>\n                    </li>\n                ");
+  }); // console.log(outputPc);
+
+  outputPc += '</ul>';
+  outputMb += '</ul>';
+
+  if (breakPointPc.matches) {
+    $('#preworks-content').html(outputPc);
+  } else {
+    $('#preworks-content').html(outputMb);
+  }
+
+  $(window).resize(function () {
+    if (breakPointPc.matches) {
+      $('#preworks-content').html(outputPc);
+    } else {
+      $('#preworks-content').html(outputMb);
+    }
   });
-  output += '</ul>';
-  console.log(output);
-  $('#preworks-content').html(output);
 }).fail(function (jqxhr, textStatus, error) {
   var err = textStatus + ", " + error;
   console.log("Request Failed: ".concat(err, " "));
   console.log("http status: ".concat(jqxhr.status));
-});
+}); // console.log(`${key}`)
+// console.log(`${value.title}`)
+// console.log(`${Object.keys(value.language)}`)
+// console.log(`${value.details.year}`)
+// console.log(`${value.details.company}`)
+// Object.keys(value.language).map(k => console.log(value.language[k]))
 
 /***/ })
 /******/ ]);

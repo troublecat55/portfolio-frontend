@@ -404,7 +404,8 @@ Banner section
 
 .banner #sub-logo {
   display: block;
-  margin-top: -2.8rem;
+  margin-top: -2.5rem;
+  margin-bottom: 1.2rem;
   margin-left: auto;
   margin-right: auto;
   font-size: 0.8rem;
@@ -740,14 +741,14 @@ Titel btns
   margin-right: auto;
   width: 100%;
   cursor: pointer;
-  background: #F0FCFF;
+  background: #FFFFF0;
   border: solid 2px black;
   transition: all .25s ease-in-out;
 }
 
 .title-btn-area .title-btn:hover {
   background: black;
-  color: #F0FCFF;
+  color: #FFFFF0;
 }
 
 @media screen and (min-width: 0) and (max-width: 801px) {
@@ -767,7 +768,7 @@ Titel btns
     box-shadow: none;
     padding: 1.1rem 0.1rem 1.1rem 0.1rem;
     background: black;
-    color: #F0FCFF;
+    color: #FFFFF0;
   }
   .title-btn-area .title-btn:hover {
     transform: scale(1.02);
@@ -781,7 +782,7 @@ Titel btns
     font-size: 1.5rem;
     border: none;
     padding: 1.5rem 0.1rem 1.5rem 0.1rem;
-    color: #F0FCFF;
+    color: #FFFFF0;
     margin-right: 10rem;
     margin-top: 1.1rem;
     background: black;
@@ -840,7 +841,7 @@ Sub-banner section(psudo element)
 }
 
 .sub-banner::after {
-  top: 0.5rem;
+  top: 0.3rem;
 }
 
 .sub-banner::before {
@@ -868,7 +869,7 @@ inspired by:https://www.youtube.com/watch?v=dIyVTjJAkLw&t=152s
   width: 3.5rem;
   height: 3.5rem;
   display: block;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   margin-right: 0.7rem;
   opacity: 0;
   animation: show 1s ease-in 1.5s forwards;
@@ -943,7 +944,7 @@ inspired by:https://www.youtube.com/watch?v=dIyVTjJAkLw&t=152s
   -o-transform: rotate(-45deg) translate(28px, 28px);
   -moz-transform: rotate(-45deg) translate(28px, 28px);
   transform: rotate(-45deg) translate(28px, 28px);
-  background: #F0FCFF;
+  background: #FFFFF0;
 }
 
 .menu-btn.expanded .menu-btn-hamburger::after {
@@ -952,7 +953,7 @@ inspired by:https://www.youtube.com/watch?v=dIyVTjJAkLw&t=152s
   -o-transform: rotate(45deg) translate(28px, -28px);
   -moz-transform: rotate(45deg) translate(28px, -28px);
   transform: rotate(45deg) translate(28px, -28px);
-  background: #F0FCFF;
+  background: #FFFFF0;
 }
 
 /*--------------------------------------------------------------
@@ -976,7 +977,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
   padding: 10rem 2rem;
   font-size: 2rem;
   background: black;
-  color: #F0FCFF;
+  color: #FFFFF0;
   z-index: 8;
   transition: opacity 0.8s 0.5s, clip-path 1s 0.5s;
   clip-path: ellipse(200px 300px at top left);
@@ -1024,7 +1025,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
   opacity: 0;
   animation: show 1s ease-in 1.5s forwards;
   transition: all 0.25 ease-in-out;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   margin-left: 0.7rem;
 }
 
@@ -1296,7 +1297,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
     padding-left: 0;
   }
   .current-ability li {
-    background: #F0FCFF;
+    background: #FFFFF0;
     list-style-type: none;
   }
 }
@@ -1304,26 +1305,31 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
 /*****sidetext-advertising-marketer*********/
 .cards {
   margin: 0;
-  padding: 0 50px 50px 50px;
+  padding: 0;
   list-style-type: none;
-}
-
-.cards .card {
-  display: block;
-  padding: 50px;
 }
 
 .cards .card a {
   text-decoration: none;
   width: 100%;
-  text-align: center;
   color: black;
   transition: all .2s;
 }
 
+.card img {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 0) and (max-width: 801px) {
+  .card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem;
+  }
   .works-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1335,7 +1341,37 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
 
 @media screen and (min-width: 1300px) {
   .works-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  /*****************************
+overlay image and text
+***********************************/
+  .card {
+    display: grid;
+    padding: 0;
+    text-align: center;
+  }
+  .card img,
+  .caption {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .caption {
+    padding: 1em;
+    background: none;
+    color: black;
+    transition: all .4s;
+  }
+  a:focus .caption,
+  a:hover .caption {
+    background: #618f9b;
+  }
+  .caption-title {
+    margin: 0;
+    line-height: 1.1em;
   }
 }
 
@@ -1370,9 +1406,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
     .cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-    }
-    .card {
-      margin-bottom: 0;
+      gap: 0;
     }
   }
   @media screen and (min-width: 1300px) {
@@ -1381,10 +1415,7 @@ inspired by:reference--https://www.youtube.com/watch?v=mEtmJ2xk16g&list=LLCqj0m-
         ****************************************/
     .cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .card {
-      margin-bottom: 0;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
@@ -1407,7 +1438,7 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100vh;
-  background-color: #F0FCFF;
+  background-color: #FFFFF0;
 }
 
 .headline {

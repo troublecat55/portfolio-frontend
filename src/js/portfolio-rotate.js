@@ -68,3 +68,5 @@ document.querySelector('#title-img').addEventListener('mouseover', e => {
         stopAnimation();
     },false);
 },false);
+
+

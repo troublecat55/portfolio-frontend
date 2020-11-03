@@ -3,6 +3,7 @@ import './intro-animation.js';
 import './portfolio-rotate.js';
 import './footer.js';
 import './hamburger.js';
+
 // import './preworks.js';
 // import * as $ from 'jquery';
 
@@ -72,7 +73,7 @@ function changImg() {
     toggle = !toggle;
 }
 
-var breakPointMb = window.matchMedia("(max-width: 801px)")
+const breakPointMb = window.matchMedia("(max-width: 801px)")
 
 document.querySelector('#title-img').addEventListener('click', e => {
     // console.log(e.target);
