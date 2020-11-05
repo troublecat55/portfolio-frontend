@@ -3,12 +3,9 @@
 	padding: 0;
     list-style-type: none;
     .card {
-        
         a {
             text-decoration: none;
             width:100%;
-            
-            color: $color-main;
             transition: all .2s;
         }
     }
@@ -25,9 +22,13 @@
         margin-right: auto;
         padding:3rem;
         // width:100vw;
+        
     }
     .works-title{
         font-size: 1.5rem;
+    }
+    .card a {
+        color: $color-main;
     }
     // .card img {
     //     display:none;
@@ -39,14 +40,26 @@
     .works-title{
         font-size: 2rem;
     }
+    .card a{
+        color: $light-gray;
+    }
 
 }
 
 
 @include break(1300px) {
     .works-title{
-        font-size: 2.5rem;
+        font-size: 2.1rem;
+        line-height:2.5rem;
     }
+    .works-mark{
+        font-size: 0.9rem;
+        line-height:0rem;
+    }
+    .card a{
+        color: $light-gray;
+    }
+
 
 }
 
@@ -67,21 +80,51 @@ overlay image and text
     
     }
     
+    .wrapper figure{
+        position:relative;
+        overflow:hidden;
+    }
+
+    .wrapper figure img{
+        position:relative;
+        transform: translateY(0);
+        transition: transform 0.4s;
+        
+    }
+    .wrapper figure:hover img{
+        transform: translateY(200px);
+    }
+    .wrapper figure:hover {
+        // color:$color-main;
+        background:$color-backgrounds;
+        border:5px solid $color-main;
+        // text-shadow:2px 2px 3px $light-gray;
+        
+    }
+    .wrapper .caption:hover {
+        background:none;
+        color:$color-main;
+
+    }
     .caption {
-    	padding: 1em;
-    	background: none;
-    	color: $color-main;
-    	transition: all .4s;
+        z-index:100;
+        padding:1rem;
+        background:$eerie-black-hover;
+        
+        // border: 2px solid $color-main;
     }
-    a:focus .caption,
-    a:hover .caption {
-    	background:$hover;
-    }
+
+    // .caption {
+    // 	padding: 1em;
+    // 	background: none;
+    // 	color: $color-main;
+    // 	transition: all .4s;
+    // }
+    // a:focus .caption,
+    // a:hover .caption {
+    // 	background:$hover;
+    // }
     
-    .caption-title {
-    	margin: 0;
-    	line-height: 1.1em;
-    }
 
 }
 

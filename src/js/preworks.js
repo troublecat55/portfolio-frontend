@@ -11,9 +11,9 @@ $.getJSON(enPreworksJson)
         $.each(data, function(key, value) {
                 outputPc += 
                 `   <li class="card">
-                        <a href="#">
+                        <a class="wrapper" href="#">
                             <figure class="card">
-                                <img src="images/${value.image}" alt="images of my articles">
+                                <img  src="images/${value.image}" alt="images of my articles">
                                 <figcaption class="caption">
                                     <h2 class="works-title">${value.title}</h2>
                                     <p class="works-mark">${value.details.year} at ${value.details.company} in ${value.details.country[0]}</p>
@@ -24,11 +24,11 @@ $.getJSON(enPreworksJson)
                     ` 
                 outputMb += 
                 `   <li class="card">
-                        <a href="#">
-                            <img src="images/${value.image}" alt="images of my articles">
+                            <a href="#">
+                            <img  src="images/${value.image}" alt="images of my articles">
                             <h2 class="works-title">${value.title}</h2>
                             <p class="works-mark">${value.details.year} at ${value.details.company} in ${value.details.country[0]}</p>
-                        </a>
+                            </a>
                     </li>
                 `
         })

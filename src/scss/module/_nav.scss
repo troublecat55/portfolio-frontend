@@ -5,7 +5,7 @@ inspired by:https://www.youtube.com/watch?v=dIyVTjJAkLw&t=152s
 
     .menu-btn {
         cursor: pointer;
-        border: 2px solid black; //test
+        border: 2px solid $color-headlines; //test
         width:3.5rem;// @include break()
         height:3.5rem;// @include break()
         display:block;
