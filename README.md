@@ -1,22 +1,22 @@
 # Portfolio-frontend
 The frontend part of my personal RWD website. Using JS(ES6), JQuery, GSAP, SASS/HTML, Gulp4 and webpack.
 
-Features :  =============
+## Features 
 * Using css "grid" concept to design pc-first RWD webpages.(Best fit with FireFox)
 * Gulp4 and webpack to improve workflow and compile js files in order to use ES6.
 
-Progress:Under-Construction :  =============
+## Progress:Under-Construction 
 
-## Finished-Part
+###### Finished-Part
 * Home-page
 * Works-page
 
-## Under-Construction
+###### Under-Construction
 * CodeWorks-page
 * Timeline-page
 
 
-Setup :  =============
+## Setup
 0. Install [Node.js](https://nodejs.org/en/download/)
 1. [Clone this repository](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 2. Type `npm install` in your terminal
