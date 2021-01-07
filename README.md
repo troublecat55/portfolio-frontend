@@ -1,20 +1,13 @@
 # Portfolio-frontend
 The frontend part of my personal RWD website. Using JS(ES6), JQuery, GSAP, SASS/HTML, Gulp4 and webpack.
 
-## Features 
+## App demo and features 
 * Using css "grid" concept to design pc-first RWD webpages.(Best fit with FireFox)
+<img src = "change_size.gif" width = "500">
 * Gulp4 and webpack to improve workflow and compile js files in order to use ES6.
-
-## Progress:Under-Construction 
-
-###### Finished-Part
-* Home-page
-* Works-page
-
-###### Under-Construction
-* CodeWorks-page
-* Timeline-page
-
+<img src = "portfolio_pc.gif" width = "500">
+<img src = "portfolio_laptop.gif" width = "500">
+<img src = "portfolio_mobile.gif" width = "500">
 
 ## Setup
 0. Install [Node.js](https://nodejs.org/en/download/)
