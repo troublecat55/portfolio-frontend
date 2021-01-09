@@ -3,12 +3,12 @@ The frontend part of my personal RWD website. Using JS(ES6), JQuery, GSAP, SASS/
 
 ## App demo and features 
 * Using css "grid" concept to design pc-first RWD webpages.(Best fit with FireFox)
-<img src = "readme_assets/change_size.gif" width = "400">
+<img src = "readme_assets/change_size.gif" width = "600">
 
 * Gulp4 and webpack to improve workflow and compile js files in order to use ES6.
-<img src = "readme_assets/portfolio_pc.gif" width = "400">
-<img src = "readme_assets/portfolio_laptop.gif" width = "400">
-<img src = "readme_assets/portfolio_mobile.gif" width = "400">
+<img src = "readme_assets/portfolio_pc.gif" width = "600">
+<img src = "readme_assets/portfolio_laptop.gif" width = "600">
+<img src = "readme_assets/portfolio_mobile.gif" width = "600">
 
 ## Setup
 0. Install [Node.js](https://nodejs.org/en/download/)
